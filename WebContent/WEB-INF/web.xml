@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>SERVLET JTC</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+	<welcome-file>jtclogin.html</welcome-file>
+  </welcome-file-list>
+
+<!--JTC Tutorial start from Here-->
+
+<!--Start of Register.html and RegisterServlet-->
+	<servlet>
+		<servlet-name>register</servlet-name>
+		<servlet-class>jtc.p1.com.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>register</servlet-name>
+		<url-pattern>/register1.jtc</url-pattern>
+	</servlet-mapping>
+<!--End of Register.html and RegisterServlet-->
+
+
+
+<context-param>
+	<param-name>state</param-name>
+	<param-value>Uttar Pradesh</param-value>
+</context-param>
+<context-param>
+	<param-name>country</param-name>
+	<param-value>India</param-value>
+</context-param>
+<servlet>
+	<servlet-name>jtcservlet</servlet-name>
+	<servlet-class>jtc.p1.com.JtcServlet</servlet-class>
+	<init-param>
+		<param-name>email</param-name>
+		<param-value>kumarabadhesh90@gmail.com</param-value>
+	</init-param>
+	<init-param>
+		<param-name>phone</param-name>
+		<param-value>8958687268</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>jtcservlet</servlet-name>
+	<url-pattern>/test.jtc</url-pattern>
+</servlet-mapping>
+
+
+
+
+
+
+
+<!--javatpoint tutorial start from here-->
+
+<!--********************************Uploading and downloading*******************************************-->
+	<context-param>
+		<param-name>tempfile.dir</param-name>
+		<param-value>tempfile</param-value>
+	</context-param>
+	<context-param>
+    <param-name>tempfile.dir</param-name>
+    <param-value>tmpfiles</param-value>
+  </context-param>
+
+
+<!--**********************************04-01-2023******************************************-->
+	<filter>
+		<filter-name>FilterConfig</filter-name>
+		<filter-class>ser.p3.com.MyFilterConfig</filter-class>
+		<init-param>
+			<param-name>construction</param-name>
+			<param-value>No</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>FilterConfig</filter-name>
+		<url-pattern>/filterconfig1.jtc</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>FilterConfigServlet</servlet-name>
+		<servlet-class>ser.p3.com.MyFilterConfigServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FilterConfigServlet</servlet-name>
+		<url-pattern>/filterconfig1.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<filter>
+		<filter-name>UserFilter1</filter-name>
+		<filter-class>ser.p3.com.UserAuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserFilter1</filter-name>
+		<url-pattern>/userauthentication1.jtc</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>UserFilterServlet</servlet-name>
+		<servlet-class>ser.p3.com.UserAuthenticationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserFilterServlet</servlet-name>
+		<url-pattern>/userauthentication1.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<filter>
+		<filter-name>Filter1</filter-name>
+		<filter-class>ser.p3.com.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Filter1</filter-name>
+		<url-pattern>/filter1.jtc</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>FilterServlet</servlet-name>
+		<servlet-class>ser.p3.com.FilterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FilterServlet</servlet-name>
+		<url-pattern>/filter1.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	<listener>
+	<listener-class>ser.p3.com.MyContextListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>contextevent</servlet-name>
+		<servlet-class>ser.p3.com.MyContextEvent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>contextevent</servlet-name>
+		<url-pattern>/contextevent1.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Session1</servlet-name>
+		<servlet-class>ser.p3.com.Session1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Session1</servlet-name>
+		<url-pattern>/session1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Session2</servlet-name>
+		<servlet-class>ser.p3.com.Session2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Session2</servlet-name>
+		<url-pattern>/session2.jtc</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UrlRewrite1</servlet-name>
+		<servlet-class>ser.p3.com.UrlRewriting1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UrlRewrite1</servlet-name>
+		<url-pattern>/urlrewrite1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UrlRewrite2</servlet-name>
+		<servlet-class>ser.p3.com.UrlRewriting2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UrlRewrite2</servlet-name>
+		<url-pattern>/urlrewrite2.jtc</url-pattern>
+	</servlet-mapping>
+
+<!--**************************************************************************************-->
+	<servlet>
+		<servlet-name>HiddenForm1</servlet-name>
+		<servlet-class>ser.p2.com.HiddenForm1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HiddenForm1</servlet-name>
+		<url-pattern>/hiddenform1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>HiddenForm2</servlet-name>
+		<servlet-class>ser.p2.com.HiddenForm2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HiddenForm2</servlet-name>
+		<url-pattern>/hiddenform2.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<display-name>Login</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>ser.p2.com.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>Logout</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>ser.p2.com.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>Profile</display-name>
+		<servlet-name>ProfileServlet</servlet-name>
+		<servlet-class>ser.p2.com.ProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProfileServlet</servlet-name>
+		<url-pattern>/ProfileServlet1.jtc</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>cookie1</servlet-name>
+		<servlet-class>ser.p2.com.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cookie1</servlet-name>
+		<url-pattern>/cookie1.jtc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cookie2</servlet-name>
+		<servlet-class>ser.p2.com.SecondServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cookie2</servlet-name>
+		<url-pattern>/cookie2.jtc</url-pattern>
+	</servlet-mapping>
+<!--**********************************************-->
+  <servlet>
+    <servlet-name>attribute1</servlet-name>
+    <servlet-class>ser.p1.com.AttributeScope1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>attribute1</servlet-name>
+    <url-pattern>/attribute1.jtc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>attribute2</servlet-name>
+    <servlet-class>ser.p1.com.AttributeScope2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>attribute2</servlet-name>
+    <url-pattern>/attribute2.jtc</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>drivername</param-name>
+    <param-value>oracle 11.2.0.4</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>servletcontext</servlet-name>
+    <servlet-class>ser.p1.com.ServletContext1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletcontext</servlet-name>
+    <url-pattern>/servletcontext1.jtc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>demoservlet</servlet-name>
+    <servlet-class>ser.p1.com.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>demoservlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>login1</servlet-name>
+    <servlet-class>ser.p1.com.login1</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>login2</servlet-name>
+    <servlet-class>ser.p1.com.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login1</servlet-name>
+    <url-pattern>/servlet1.jtc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>login2</servlet-name>
+    <url-pattern>/servlet2.jtc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>googlesearch</servlet-name>
+    <servlet-class>ser.p1.com.GoogleSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>googlesearch</servlet-name>
+    <url-pattern>/googlesearch1.jtc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>servletconfig1</servlet-name>
+    <servlet-class>ser.p1.com.ServletConfig1</servlet-class>
+    <init-param>
+      <param-name>driver</param-name>
+      <param-value>oracle driver</param-value>
+    </init-param>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>abadhesh kumar</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>oracle@80</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletconfig1</servlet-name>
+    <url-pattern>/servletconfig1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AttributeScope1</display-name>
+    <servlet-name>AttributeScope1</servlet-name>
+    <servlet-class>ser.p1.com.ServletContext1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AttributeScope1</servlet-name>
+    <url-pattern>/AttributeScope1</url-pattern>
+  </servlet-mapping>
+</web-app>
